@@ -1,5 +1,11 @@
 # Instructions 
 
+## Asking for Help
+
+You are encouraged to and expected to ask for help. Either from me or your fellow students. You are also expected to look up some things on your own as these instructions do not give all the information you need to know to complete the assignment. There's a balance to be struck between struggling through it yourself and knowing when to ask for help. 
+
+As a guideline, if you spend more than an hour "stuck" on any part of the assignment by yourself, please know that you can message me, or post a message in `#homework-discussion`.
+
 ## Setup
 
 1. Clone the repository to your local computer (e.g with GitHub Desktop as we did with "The First Lesson")
@@ -42,3 +48,8 @@ Now you will begin working in the `part-2-multiple-files` directory under your n
    1. Commit changes to GitHub
    2. Push changes to GitHub
 
+### Bonus
+
+1. Add a favicon to your page
+2. Make the `#input-area` div change contents based on what button was pressed using Javascript
+3. Have another student make a change to your calculator and be able to pull down and incorporate those changes. 
