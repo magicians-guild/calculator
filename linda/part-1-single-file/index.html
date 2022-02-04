@@ -7,8 +7,28 @@
     
     <!-- Fill in CSS here between style tags -->
     <style>
+        #title{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color:#e3b155;
+        }
+        #input-area{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color:#84b09b;
+        }
+        #number-buttons div{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
         .calculator-buttons{
             display: inline-block;
+            border: 1px solid #e3b155;
+            width: 80px;
+            text-align: center;
+            padding: 9px;
+            background-color:#f0e9df;
+            font-size: 40px;
+            color:#84b09b;
+            
+            
         }
     </style>
 
@@ -18,6 +38,7 @@
     </script>
 
     <body>
+        <h1 id="title">My first calculator</h1>
         <div id="input-area">Number Clicked Will Appear Here Eventually</div>
         <div id="number-buttons">
             <div class="calculator-row">
