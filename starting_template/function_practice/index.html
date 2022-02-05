@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            Javascript Functions
+        </title>
+    </head>
+    
+    <!-- Fill in CSS here between style tags -->
+    <style>
+    </style>
+
+
+    <body>
+        <div>
+            <h1>Javascript Functions</h1>
+        </div>
+
+        <div>List with N items
+            <ol id="numbered-list"></ol>
+        </div>
+    </body>
+    <!-- Fill in JavaScript code between the script tags -->
+    <script>
+        window.onload = function() {
+            addToList(10);
+        };
+        function addToList(N) {
+            let numbered_list = document.getElementById("numbered-list");
+            for (let i = 1; i <= N; i++) {
+                let element = document.createElement("li");
+                numbered_list.append(element);
+            }
+        }
+
+    </script>
+    
+</html>
