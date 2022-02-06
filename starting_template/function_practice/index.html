@@ -7,6 +7,19 @@
     
     <!-- Fill in CSS here between style tags -->
     <style>
+        #display-number {
+            display: inline;
+        }
+
+        #numbered-boxes {
+            margin-top: 2em;
+        }
+        
+        .boxes {
+            border: 1px solid orange;
+            display: inline;
+            padding: 15;
+        }
     </style>
 
 
@@ -15,23 +28,23 @@
             <h1>Javascript Functions</h1>
         </div>
 
-        <div>List with N items
-            <ol id="numbered-list"></ol>
+        <div>There are N =<div id="display-number"> 0</div> boxes
+            <div id="numbered-boxes"></div>
         </div>
     </body>
     <!-- Fill in JavaScript code between the script tags -->
     <script>
-        window.onload = function() {
-            addToList(10);
-        };
         function addToList(N) {
-            let numbered_list = document.getElementById("numbered-list");
+            let numbered_list = document.getElementById("numbered-boxes");
             for (let i = 1; i <= N; i++) {
-                let element = document.createElement("li");
+                let element = document.createElement("div");
+                element.innerHTML = i;
+                element.className = "boxes";
                 numbered_list.append(element);
             }
         }
 
+
     </script>
-    
+    <script src="app.js"></script>
 </html>
