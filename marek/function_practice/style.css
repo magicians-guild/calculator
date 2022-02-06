@@ -1,0 +1,30 @@
+#display-number {
+    display: inline;
+}
+
+#numbered-boxes {
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.boxes {
+    border: 1px solid orange;
+    display: inline;
+    padding: 15;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+.tests {
+    font-family: monospace;
+}
+
+.test-failed {
+    color: red;
+}
+
+.test-passed {
+    color: green;
+}
