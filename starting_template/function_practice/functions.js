@@ -1,6 +1,22 @@
 
 // If Statements
 
+// Examples
+
+function containsA(word) {
+    // this is a typo, change to "a" and "A" instead
+    return word.includes("b") || word.includes("B");
+}
+
+// example provided with solution
+function isOdd(number) {
+    if (number % 2 === 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 /* 
 Write a function that returns True if the input number is positive, False if is not
 Sample Input: 2

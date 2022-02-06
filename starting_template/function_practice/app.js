@@ -39,7 +39,7 @@ function display_tests(tuples, function_name) {
     div.appendChild(ol);
 }
 
-let isPositive_test_cases = [
+var isPositive_test_cases = [
     [-7, false],
     [8, true],
     [0, false],
@@ -47,7 +47,7 @@ let isPositive_test_cases = [
     [100001, true]
 ]
 
-let isEven_test_cases = [
+var isEven_test_cases = [
     [6, true],
     [0, true],
     [6.4, false],
@@ -56,7 +56,7 @@ let isEven_test_cases = [
     [100, true]
 ]
 
-let findMax_test_cases = [
+var findMax_test_cases = [
     [[0,1], 1],
     [[1,2,3,4,0,10,15,2], 15],
     [[1,2,-33,4,0,10,15,2], 15],
@@ -64,17 +64,36 @@ let findMax_test_cases = [
     [[-100001, 0,1], 1]
 ]
 
-let sumUpTo_test_cases = [
+var sumUpTo_test_cases = [
     [6, 21],
     [7, 28],
     [4, 10],
     [56, 1596]
 ]
 
-let sumUpToForLoop_test_cases = sumUpTo_test_cases;
 
-display_tests(isPositive_test_cases, "isPositive");
-display_tests(isEven_test_cases, "isEven");
-display_tests(findMax_test_cases, "findMax");
-display_tests(sumUpTo_test_cases, "sumUpTo");
-display_tests(sumUpToForLoop_test_cases, "sumUpToForLoop");
+var isOdd_test_cases = [
+    [6, false],
+    [0, false],
+    [6.4, false],
+    [7, true],
+    [100001, true],
+    [100, false]
+]
+
+var containsA_test_cases = [
+    ["xkcd", false],
+    ["Marek", true],
+    ["Amy", true],
+    ["Linda", true],
+    ["Simon", false]
+]
+
+var sumUpToForLoop_test_cases = sumUpTo_test_cases;
+
+let function_names = ["containsA", "isOdd", "isPositive", "isEven", "findMax",
+    "sumUpTo", "sumUpToForLoop"]
+
+for (fn of function_names) {
+    display_tests(this[fn + "_test_cases"], fn);
+}
