@@ -5,7 +5,7 @@
 
 function containsA(word) {
     // this is a typo, change to "a" and "A" instead
-    return word.includes("b") || word.includes("B");
+    return word.includes("a") || word.includes("A");
 }
 
 // example provided with solution
