@@ -26,8 +26,11 @@ Sample Output: False
 Sample call: isPositive(2);
 */
 
-function isPositive(number) {
-
+function numeropositivo(number) {
+    if(number > 0) {return true;}
+    else {
+        return false;
+    }
 }
 
 /* 
@@ -40,6 +43,11 @@ Sample call: isEven(3);
 */
 
 function isEven(number) {
+    if (number % 2 === 0)
+    {return true;}
+    else {
+        return false;
+    }
 
 }
 
@@ -54,7 +62,13 @@ Sample Call: findMax([13, 3, 30, 44.5])
 */
 
 function findMax(array_of_numbers) {
-
+    let max = -Infinity
+    for (let position = 0; position < array_of_numbers.length; position++){
+        console.log('position: ' + position);
+        if (max < array_of_numbers[position]) {max = array_of_numbers[position]}
+        console.log(array_of_numbers[position]);
+    }
+    return max
 }
 
 // Write a function that takes a number n and returns a string of the sequence of numbers up to n from 0
@@ -73,5 +87,9 @@ function sumUpTo(target) {
 
 // Follow up: Write the same function using a for loop
 function sumUpToForLoop(target) {
+    let result = 0
+    for(let number = 0; number <= target; number++) {
+        result = number + result}
+    return result
 
 } 
