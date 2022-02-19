@@ -39,7 +39,7 @@ function display_tests(tuples, function_name) {
     div.appendChild(ol);
 }
 
-var isPositive_test_cases = [
+var numeropositivo_test_cases = [
     [-7, false],
     [8, true],
     [0, false],
@@ -91,7 +91,7 @@ var containsA_test_cases = [
 
 var sumUpToForLoop_test_cases = sumUpTo_test_cases;
 
-let function_names = ["containsA", "isOdd", "isPositive", "isEven", "findMax",
+let function_names = ["containsA", "isOdd", "numeropositivo", "isEven", "findMax",
     "sumUpTo", "sumUpToForLoop"]
 
 for (fn of function_names) {
