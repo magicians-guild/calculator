@@ -10,32 +10,64 @@
         .calculator-buttons {
             border-width: 10px;
             border-style: solid;
-            border-color: orange;
+            border-color: blue;
             padding: 10px;
             margin: 10pt; 
             width: 25%;
         }
     </style>
 
-    <!-- Fill in JavaScript code between the script tags -->
-    <script>
-        
-    </script>
 
     <body>
         <div id="input-area">Number Clicked Will Appear Here Eventually</div>
         <div id="number-buttons">
             <div class="calculator-row">
-                <div class="calculator-buttons">
-                    10
+                <div id="ten" class="calculator-buttons">
+                    Linda
                 </div>
-                <div class="calculator-buttons">
-                    20
+                <div id="twenty" class="calculator-buttons">
+                    Marek
                 </div>
-                <div class="calculator-buttons">
+                <div id="thirty" class="calculator-buttons">
                     30
                 </div>    
+                <div id="forty" class="calculator-buttons">
+                    40
+                </div>    
+                <div id="reset-button">
+                    Reset
+                </div>
             </div>
         </div>
     </body>
+    <!-- Fill in JavaScript code between the script tags -->
+    <script>
+        // document.getElementById("ten").onclick = function boogaboo() {
+        //     document.getElementById("input-area").innerHTML = "Hello Linda and Marek";
+        //     console.log("ten button clicked");
+        // }        
+        // document.getElementById("twenty").onclick = function boogaboo() {
+        //     console.log("twenty button clicked");
+        // }
+        
+        const buttons = document.getElementsByClassName("calculator-buttons");
+        console.log(buttons);
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].onclick = () => {
+                // get the text in the button and store it in a variable
+                const marek_button_value = buttons[i].innerHTML;
+
+                // print the stored button text in the console
+                console.log(marek_button_value);
+
+                // replace the text in the #input-area div with the button text
+                document.getElementById("input-area").innerHTML = marek_button_value;
+            }
+        }
+        // document.getElementsByClassName("calculator-buttons").onclick = function whatever() {
+        //     document.getElementById("input-area").innerHTML = "Hello Linda and Marek, button was clicked";
+        // }
+
+    </script>
+    
 </html>

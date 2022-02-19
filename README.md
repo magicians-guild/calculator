@@ -23,8 +23,7 @@ Add to the single `index.html` file in the `part-1-single-file` directory:
 
 1. Add CSS styling to the numbers so that the numbers are in a row instead of column
    1. Commit changes in git
-   2. 
-   3. Push changes to GitHub
+   2. Push changes to GitHub
 2. Add CSS styling to the numbers such that there's a visible box around them and look like buttons
    1. Commit changes in git
    2. Push changes to GitHub
