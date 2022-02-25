@@ -23,10 +23,10 @@
         <div id="number-buttons">
             <div class="calculator-row">
                 <div id="ten" class="calculator-buttons">
-                    Linda
+                    Amy
                 </div>
                 <div id="twenty" class="calculator-buttons">
-                    Marek
+                    Simon
                 </div>
                 <div id="thirty" class="calculator-buttons">
                     30
@@ -42,28 +42,50 @@
     </body>
     <!-- Fill in JavaScript code between the script tags -->
     <script>
-        // document.getElementById("ten").onclick = function boogaboo() {
-        //     document.getElementById("input-area").innerHTML = "Hello Linda and Marek";
-        //     console.log("ten button clicked");
-        // }        
-        // document.getElementById("twenty").onclick = function boogaboo() {
-        //     console.log("twenty button clicked");
-        // }
+
+        function randomname() {
+            document.getElementById("input-area").innerHTML = "Hello Amy";
+            console.log("ten button clicked");
+        }
+        document.getElementById("ten").onclick = randomname;
+
+        document.getElementById("twenty").onclick = function bar() {
+            console.log("twenty button clicked");
+        }
         
+        document.getElementById("ten").onmouseover = () => {
+            document.getElementById("ten").style["border-color"] = "orange";
+        }
+
+        document.getElementById("ten").onmouseout = () => {
+            document.getElementById("ten").style["border-color"] = "blue";
+        }
+
         const buttons = document.getElementsByClassName("calculator-buttons");
+        // buttons = [button1, button2, button3, button4]
         console.log(buttons);
+        console.log(buttons.length)
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].onclick = () => {
                 // get the text in the button and store it in a variable
-                const marek_button_value = buttons[i].innerHTML;
+                const amys_button = buttons[i].innerHTML;
 
                 // print the stored button text in the console
-                console.log(marek_button_value);
+                console.log(amys_button);
 
                 // replace the text in the #input-area div with the button text
-                document.getElementById("input-area").innerHTML = marek_button_value;
+                document.getElementById("input-area").innerHTML = amys_button;
+                
+            }
+            buttons[i].onmouseover = () => {
+                buttons[i].style["border-color"] = "orange";
+            }
+
+            buttons[i].onmouseout = () => {
+                buttons[i].style["border-color"] = "blue";
             }
         }
+
         // document.getElementsByClassName("calculator-buttons").onclick = function whatever() {
         //     document.getElementById("input-area").innerHTML = "Hello Linda and Marek, button was clicked";
         // }
