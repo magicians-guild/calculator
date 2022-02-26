@@ -8,14 +8,12 @@
     <!-- Fill in CSS here between style tags -->
     <style>
         #title{
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             color:#e3b155;
         }
         #input-area{
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             color:#84b09b;
         }
-        #number-buttons div{
+        #title, #input-area, #number-buttons div {
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
         .calculator-buttons{
@@ -26,7 +24,7 @@
             padding: 9px;
             background-color:#f0e9df;
             font-size: 40px;
-            color:#84b09b; 
+            color: #84b09b; 
         }
         .calculator-buttons:hover {
             background-color: #e6c532;
@@ -78,10 +76,18 @@
 
     <!-- Fill in JavaScript code between the script tags -->
     <script>
+        // get array of buttons
         const buttons = document.getElementsByClassName("calculator-buttons");
         console.log(buttons);
+
+        // declare the variable
+        const button_color = buttons[0].style["color"];
+
         for (let i = 0; i < buttons.length; i++) {
+
+            // button 1
             buttons[i].onclick = () => {
+
                 // get the text in the button and store it in a variable
                 const button_value = buttons[i].innerHTML;
 
@@ -90,6 +96,17 @@
 
                 // replace the text in the #input-area div with the button text
                 document.getElementById("input-area").innerHTML = button_value;
+            }
+
+            buttons[i].onmouseover = () => {
+                console.log(buttons[i].innerHTML + "mouse over");
+                buttons[i].style["color"] = "red";
+                buttons[i].style["cursor"] = "pointer";
+            }
+
+            buttons[i].onmouseout = () => {
+                console.log(buttons[i].innerHTML + "mouse out")
+                buttons[i].style["color"] = button_color;
             }
         }
     </script>
