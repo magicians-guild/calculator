@@ -35,10 +35,6 @@
         }
     </style>
 
-    <!-- Fill in JavaScript code between the script tags -->
-    <script>
-        
-    </script>
 
     <body>
         <h1 id="title">My first calculator</h1>
@@ -55,6 +51,47 @@
                     3
                 </div>    
             </div>
+            <div class="calculator-row">
+                <div class="calculator-buttons">
+                    4
+                </div>
+                <div class="calculator-buttons">
+                    5
+                </div>
+                <div class="calculator-buttons">
+                    6
+                </div>    
+            </div>
+            <div class="calculator-row">
+                <div class="calculator-buttons">
+                    7
+                </div>
+                <div class="calculator-buttons">
+                    8
+                </div>
+                <div class="calculator-buttons">
+                    9
+                </div>    
+            </div>
         </div>
     </body>
+
+    <!-- Fill in JavaScript code between the script tags -->
+    <script>
+        const buttons = document.getElementsByClassName("calculator-buttons");
+        console.log(buttons);
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].onclick = () => {
+                // get the text in the button and store it in a variable
+                const button_value = buttons[i].innerHTML;
+
+                // print the stored button text in the console
+                console.log(button_value);
+
+                // replace the text in the #input-area div with the button text
+                document.getElementById("input-area").innerHTML = button_value;
+            }
+        }
+    </script>
+    
 </html>

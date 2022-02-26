@@ -76,12 +76,13 @@ function findMax(array_of_numbers) {
 // While Loops
 
 /*
-Write a function that starts at 0 and returns the sum of the sequence up to that number
+Write a function that starts at 0 and returns the sum of the sequence up to that number (while loop)
 Sample Input: 6
 Sample Output: 21
-(because 0+1+2+3+4+5+6 = 21)
-*/
+(because 0+1+2+3+4+5+6 = 21) (instead of"for" is gonna be "while")
+*/ 
 function sumUpTo(target) {
+
 
 } 
 
