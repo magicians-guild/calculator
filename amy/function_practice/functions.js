@@ -27,10 +27,10 @@ Sample call: isPositive(2);
 */
 
 function isPositive(number) {
-    if (number % 2 === 0) {
+    if (number > 0) {
         return true;
     } else {
-        return false
+        return false;
     }
 }
 
@@ -44,7 +44,11 @@ Sample call: isEven(3);
 */
 
 function isEven(number) {
-
+    if (number % 2 === 0) {
+        return true;
+    } else {
+        return false
+    }
 }
 
 
@@ -58,6 +62,17 @@ Sample Call: findMax([13, 3, 30, 44.5])
 */
 
 function findMax(array_of_numbers) {
+    if (array_of_numbers.length > 0) {
+        current_max = array_of_numbers[0]
+        for (let i = 0; i < array_of_numbers.length; i++) {
+            // if current element is bigger than the observed maximum
+            if (array_of_numbers[i] > current_max) {
+                // update max
+                current_max = array_of_numbers[i]
+            }
+        }
+        return current_max
+    }
 
 }
 
@@ -72,10 +87,30 @@ Sample Output: 21
 (because 0+1+2+3+4+5+6 = 21)
 */
 function sumUpTo(target) {
+    let current_sum = 0;
+    let i = 0;
 
+    while (i <= target) {
+        current_sum += i;
+        i++;
+    }
+    return current_sum;
 } 
 
 // Follow up: Write the same function using a for loop
 function sumUpToForLoop(target) {
+    let current_sum = 0;
+
+    // e.g. if target = 6, loop from 0,1,2,3,4,5
+
+    //for (let i = 0; i < target; i++) {
+
+    // e.g. if target = 6, loop from 0,1,2,3,4,5,6
+
+
+    for (let i = 0; i <= target; i++) {
+        current_sum += i;
+    }
+    return current_sum;
 
 } 
