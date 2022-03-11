@@ -27,7 +27,11 @@ Sample call: isPositive(2);
 */
 
 function isPositive(number) {
-
+    if (number % 2 === 0) {
+        return true;
+    } else {
+        return false
+    }
 }
 
 /* 
