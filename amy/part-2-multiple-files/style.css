@@ -1,0 +1,16 @@
+<!-- Fill in CSS here between style tags -->
+    <style>
+        .calculator-row {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: teal;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .calculator-buttons {
+            background-color: white;
+            border: 1px solid;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
