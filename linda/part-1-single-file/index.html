@@ -26,6 +26,21 @@
             font-size: 40px;
             color: #84b09b; 
         }
+        .operator-buttons{
+            display: inline-block;
+            border: 1px solid #e3b155;
+            width: 80px;
+            text-align: center;
+            padding: 9px;
+            background-color:#f0e9df;
+            font-size: 40px;
+            color: #84b09b; 
+        }
+        .operator-buttons:hover {
+            background-color: #e6c532;
+            box-shadow: 3px 3px 4px 1px rgba(7, 7, 7, 0.2);
+            color: black
+        }
         .calculator-buttons:hover {
             background-color: #e6c532;
             box-shadow: 3px 3px 4px 1px rgba(7, 7, 7, 0.2);
@@ -37,6 +52,20 @@
     <body>
         <h1 id="title">My first calculator</h1>
         <div id="input-area">Number Clicked Will Appear Here Eventually</div>
+        <div id = "operators"> 
+            <div class="operator-buttons"> 
+                + 
+            </div>
+            <div class="operator-buttons"> 
+                - 
+            </div>
+            <div class="operator-buttons"> 
+                x 
+            </div>
+            <div class="operator-buttons"> 
+                ÷ 
+            </div>
+        </div>
         <div id="number-buttons">
             <div class="calculator-row">
                 <div class="calculator-buttons">
@@ -70,6 +99,11 @@
                 <div class="calculator-buttons">
                     9
                 </div>    
+            </div>
+        </div>
+        <div id = "equal"> 
+            <div class="operator-buttons"> 
+                = 
             </div>
         </div>
     </body>
