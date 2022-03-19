@@ -55,18 +55,18 @@
         <div id="number-buttons">
             <div class="calculator-row">
                 <div id="operators">
-                    <div class="operator-buttons"> 
+                    <div class="calculator-buttons operator-buttons"> 
                         + 
                     </div>
-                    <div class="operator-buttons"> 
+                    <div class="calculator-buttons operator-buttons"> 
                         - 
                     </div>
-                    <div class="operator-buttons"> 
+                    <div class="calculator-buttons operator-buttons"> 
                         × 
                     </div>
-                    <div class="operator-buttons"> 
+                    <div class="calculator-buttons operator-buttons"> 
                         ÷ 
-                    </div>        
+                    </div>
                 </div>
             </div>
             <div class="calculator-row">
@@ -92,7 +92,11 @@
                 </div>
                 <div class="calculator-buttons">
                     6
-                </div>    
+                </div>
+                <div class="calculator-buttons operator-buttons">
+                    C
+                </div>
+
             </div>
             <div class="calculator-row">
                 <div class="calculator-buttons">
@@ -117,29 +121,57 @@
         // declare the variable
         const button_color = buttons[0].style["color"];
 
+        let current_numbers = []
+        let current_operator = ""
+
+        let calculator_operation = (current_numbers, current_operator) => {
+            console.log(current_numbers);
+            console.log(current_operator); 
+            if (current_operator === "+") {
+                return parseInt(current_numbers[0]) + parseInt(current_numbers[1]);
+            }
+        }
+
+
         for (let i = 0; i < buttons.length; i++) {
 
             // button 1
             buttons[i].onclick = () => {
 
                 // get the text in the button and store it in a variable
-                const button_value = buttons[i].innerHTML;
+                let button_value = buttons[i].innerHTML;
 
-                // print the stored button text in the console
-                console.log(button_value);
+                // // print the stored button text in the console
+                // console.log(button_value);
 
                 // replace the text in the #input-area div with the button text
-                document.getElementById("input-area").innerHTML = button_value;
+
+                button_value = button_value.trim();
+
+                document.getElementById("input-area").innerHTML += button_value;
+
+                if (button_value === "+") {
+                    current_operator = button_value;
+                } else if (button_value === "=") {
+                    document.getElementById("input-area").innerHTML += calculator_operation(current_numbers, current_operator);
+                } else if (button_value === "C") {
+                    document.getElementById("input-area").innerHTML = ""
+                }
+                // number button was clicked
+                else {
+                    current_numbers.push(button_value)
+                    console.log(button_value)
+                }
             }
 
             buttons[i].onmouseover = () => {
-                console.log(buttons[i].innerHTML + "mouse over");
+                // console.log(buttons[i].innerHTML + "mouse over");
                 buttons[i].style["color"] = "red";
                 buttons[i].style["cursor"] = "pointer";
             }
 
             buttons[i].onmouseout = () => {
-                console.log(buttons[i].innerHTML + "mouse out")
+                // console.log(buttons[i].innerHTML + "mouse out")
                 buttons[i].style["color"] = button_color;
             }
         }
