@@ -54,6 +54,12 @@
                 <div class="calculator-buttons">
                     9
                 </div> 
+                <div class="calculator-buttons">
+                    C
+                </div> 
+                <div class="calculator-buttons">
+                    +
+                </div> 
             </div>
         </div>
     </body>
@@ -61,6 +67,22 @@
  <!-- Fill in JavaScript code between the script tags -->
  <script>
     
+    let addNumbers = (a, b) => {
+        return a + b;
+    }
+
+    let subtractNumbers = (a, b) => {
+        return a - b;
+    }
+
+    let multiplyNumbers = (a, b) => {
+        return a * b;
+    }
+
+    let divideNumbers = (a, b) => {
+        return a / b;
+    }
+
     const buttons = document.getElementsByClassName("calculator-buttons");
     console.log(buttons);
 
@@ -70,13 +92,23 @@
 
        
         buttons[i].onclick = () => {
+            let button_value = buttons[i].innerHTML;
+            // button value is equal to "         x        "
+            button_value = button_value.trim();
 
-            
-            const button_value = buttons[i].innerHTML;
+            if (button_value === "C") {
 
-            console.log(button_value);
+                document.getElementById("input-area").innerHTML = "";
 
-            document.getElementById("input-area").innerHTML = button_value;
+            } else if (button_value === "+") {
+                document.getElementById("input-area").innerHTML += button_value;
+
+            }
+            else {
+                console.log(button_value);
+                document.getElementById("input-area").innerHTML = button_value;
+            }
+
         }
 
         buttons[i].onmouseover = () => {
