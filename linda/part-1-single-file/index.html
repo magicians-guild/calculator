@@ -10,10 +10,13 @@
         #title{
             color:#e3b155;
         }
-        #input-area{
+        #input-area, .input{
             color:#84b09b;
+            border: 1px solid #e3b155;
+            padding: 10px;
+            width: 50%;
         }
-        #title, #input-area, #number-buttons div {
+        #title, #input-area, #number-buttons div, .input {
             font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
         .calculator-buttons{
@@ -51,7 +54,11 @@
 
     <body>
         <h1 id="title">My first calculator</h1>
-        <div id="input-area">Number Clicked Will Appear Here Eventually</div>
+        <div class="input">Total Input: <div id="total-input"></div></div>
+        <div class="input">Current Operator: <div id="current-operator"></div></div>
+        <div class="input">Previous Number: <div id="previous-number"></div></div>
+        <div class="input">Current Number: <div id="current-number"></div></div>
+        <div class="input">Output Number: <div id="output-number"></div></div>
         <div id="number-buttons">
             <div class="calculator-row">
                 <div id="operators">
@@ -120,18 +127,18 @@
 
         // declare the variable
         const button_color = buttons[0].style["color"];
-
-        let current_numbers = []
-        let current_operator = ""
-
-        let calculator_operation = (current_numbers, current_operator) => {
-            console.log(current_numbers);
-            console.log(current_operator); 
-            if (current_operator === "+") {
-                return parseInt(current_numbers[0]) + parseInt(current_numbers[1]);
-            }
+        let addNumbers = (a, b) => {
+            return a + b;
         }
-
+        let subtractNumbers = (a, b) => {
+            return a - b;
+        }
+        let multiplyNumbers = (a, b) => {
+            return a * b;
+        }
+        let divideNumbers = (a, b) => {
+            return a / b;
+        }    
 
         for (let i = 0; i < buttons.length; i++) {
 
@@ -148,19 +155,70 @@
 
                 button_value = button_value.trim();
 
-                document.getElementById("input-area").innerHTML += button_value;
+                document.getElementById("total-input").innerHTML += button_value;
 
                 if (button_value === "+") {
-                    current_operator = button_value;
-                } else if (button_value === "=") {
-                    document.getElementById("input-area").innerHTML += calculator_operation(current_numbers, current_operator);
+                    document.getElementById("current-operator").innerHTML = "+";
+                    document.getElementById("previous-number").innerHTML = document.getElementById("current-number").innerHTML;
+                    document.getElementById("current-number").innerHTML = "";
+                } 
+                else if (button_value === "-") {
+                    document.getElementById("current-operator").innerHTML = "-";
+                    document.getElementById("previous-number").innerHTML = document.getElementById("current-number").innerHTML;
+                    document.getElementById("current-number").innerHTML = "";
+
+                }
+                else if (button_value === "×") {
+                    document.getElementById("current-operator").innerHTML = "×";
+                    document.getElementById("previous-number").innerHTML = document.getElementById("current-number").innerHTML;
+                    document.getElementById("current-number").innerHTML = "";
+
+                }
+                else if (button_value === "÷") {
+                    document.getElementById("current-operator").innerHTML = "÷";
+                    document.getElementById("previous-number").innerHTML = document.getElementById("current-number").innerHTML;
+                    document.getElementById("current-number").innerHTML = "";
+
+                }
+                else if (button_value === "=") {
+
+                    let current_operator = document.getElementById("current-operator").innerHTML.trim();
+                    let previous_number = document.getElementById("previous-number").innerHTML.trim();
+                    previous_number = parseInt(previous_number);
+                    
+                    let current_number = document.getElementById("current-number").innerHTML.trim();
+                    current_number = parseInt(current_number);
+
+                    if (current_operator === "+") {
+                        let output_number = addNumbers(previous_number, current_number);
+                        document.getElementById("output-number").innerHTML = output_number;
+                    }
+
+                    if (current_operator === "-") {
+                        let output_number = subtractNumbers(previous_number, current_number);
+                        document.getElementById("output-number").innerHTML = output_number;
+                    }
+                    if (current_operator === "×") {
+                        let output_number = multiplyNumbers(previous_number, current_number);
+                        document.getElementById("output-number").innerHTML = output_number;
+                    }
+                    if (current_operator === "÷") {
+                        let output_number = divideNumbers(previous_number, current_number);
+                        document.getElementById("output-number").innerHTML = output_number;
+                    }
+
+                    // _ = underscore
+                    // - = dash
                 } else if (button_value === "C") {
-                    document.getElementById("input-area").innerHTML = ""
+                    document.getElementById("total-input").innerHTML = "";
+                    document.getElementById("current-number").innerHTML = "";
+                    document.getElementById("current-operator").innerHTML = "";
+                    document.getElementById("previous-number").innerHTML = "";
+                    document.getElementById("output-number").innerHTML = "";
                 }
                 // number button was clicked
                 else {
-                    current_numbers.push(button_value)
-                    console.log(button_value)
+                    document.getElementById("current-number").innerHTML += button_value;
                 }
             }
 
