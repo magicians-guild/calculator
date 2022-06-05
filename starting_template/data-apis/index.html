@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>a good title</title>
+    </head>
+    <body>
+        <p id="text">paragraph text</p>
+        <ol>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        // let fact = { 
+        //     "text": "Relative to its body size, the clouded leopard has the biggest canines of all animals\u2019 canines. Its dagger-like teeth can be as long as 1.8 inches (4.5 cm).", 
+        //     "length": 156,
+        //     "name": "linda"
+        // }
+
+        let url = "https://catfact.ninja/fact"
+        url = "https://api.agify.io?name="
+
+        let names = ["simon", "marek", "linda", "amy", "bobby", "joanna", "andrew"]
+        for (let name of names) {
+            let getCatFact = $.getJSON(url + name, function(linda){
+            console.log(linda);
+            $("ol").append("<li>" + "Name: " + linda["name"] + " Age: " +  linda["age"] + "</li>")
+        })
+
+        }
+
+        // $.getJSON("https://catfact.ninja/fact", function(linda){
+        //     console.log(linda);
+        //     document.getElementById("text").innerHTML = linda["fact"]
+        // })
+    </script> 
+
+</html>
